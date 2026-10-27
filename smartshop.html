@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Смартфон24 — смартфоны с гарантией</title>
+<meta name="description" content="Оригинальные смартфоны с официальной гарантией, быстрой доставкой по России и возвратом в течение 14 дней.">
+<style>
+:root{
+  --bg:#f5f6fa;--card:#fff;--text:#14171f;--muted:#667085;--line:#e4e7ee;
+  --accent:#2f5bff;--accent-d:#1f43d1;--accent-l:#eaf0ff;
+  --green:#12a150;--green-l:#e3f6ec;--grey-l:#eceef3;--red:#e5484d;--amber:#f59e0b;
+  --r:16px;--shadow:0 2px 10px rgba(20,23,31,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,select,textarea{font:inherit;color:inherit}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.2;letter-spacing:-.01em}
+h2{font-size:28px;margin-bottom:20px}
+section{margin:56px 0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:600;transition:.15s;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-d)}
+.btn-ghost{background:#fff;border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-lg{padding:16px 30px;font-size:17px}
+.btn-sm{padding:9px 14px;font-size:14px}
+.btn-block{width:100%}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid rgba(47,91,255,.35);outline-offset:2px}
+
+/* header */
+header.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.logo{font-weight:800;font-size:21px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+.logo i{width:28px;height:28px;border-radius:8px;background:var(--accent);display:grid;place-items:center}
+.logo i::after{content:"";width:9px;height:15px;border:2px solid #fff;border-radius:3px}
+.nav{display:flex;gap:6px;margin-left:12px}
+.nav a{padding:8px 12px;border-radius:10px;color:var(--muted);font-weight:500}
+.nav a:hover,.nav a.on{background:var(--accent-l);color:var(--accent)}
+.top .sp{flex:1}
+.icon-btn{position:relative;display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:12px;font-weight:600;background:var(--grey-l)}
+.icon-btn:hover{background:var(--accent-l);color:var(--accent)}
+.icon-btn .n{min-width:20px;height:20px;border-radius:10px;background:var(--accent);color:#fff;font-size:12px;display:grid;place-items:center;padding:0 5px}
+.icon-btn .n:empty,.icon-btn .n[data-z="0"]{display:none}
+.top .tel{color:var(--muted);font-size:14px;font-weight:500}
+
+/* hero */
+.hero{background:linear-gradient(120deg,#0f1b4d 0%,#2f5bff 100%);border-radius:28px;color:#fff;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;overflow:hidden;margin-top:28px;min-height:440px}
+.hero .txt{padding:48px 48px}
+.hero h1{font-size:44px;margin-bottom:16px}
+.hero p{font-size:19px;opacity:.9;margin-bottom:10px}
+.hero .tag{display:inline-block;background:rgba(255,255,255,.16);padding:6px 14px;border-radius:20px;font-weight:600;margin:6px 0 28px}
+.hero .btn-primary{background:#fff;color:var(--accent)}
+.hero .btn-primary:hover{background:#eaf0ff}
+.hero .vis{display:flex;justify-content:center;align-items:flex-end;height:100%;padding-top:30px}
+.hero .vis svg{height:400px;width:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.35));transform:translateY(24px) rotate(4deg)}
+
+/* tiles */
+.tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.tile{background:var(--card);border-radius:var(--r);padding:20px 12px;text-align:center;font-weight:600;box-shadow:var(--shadow);border:1px solid transparent;transition:.15s}
+.tile:hover{border-color:var(--accent);transform:translateY(-2px)}
+.tile .ic{width:48px;height:48px;border-radius:14px;margin:0 auto 10px;display:grid;place-items:center;background:var(--accent-l);font-size:22px}
+.tile small{display:block;color:var(--muted);font-weight:400;font-size:13px;margin-top:2px}
+
+/* product grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid.g4{grid-template-columns:repeat(3,1fr)}
+.pc{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden;position:relative;border:1px solid transparent;transition:.15s}
+.pc:hover{border-color:#cdd6f5}
+.pc .img{background:#fff;aspect-ratio:1/1;display:grid;place-items:center;padding:18px;border-bottom:1px solid var(--line)}
+.pc .img svg{height:100%;width:auto}
+.pc .body{padding:16px;display:flex;flex-direction:column;flex:1;gap:8px}
+.pc .nm{font-weight:600;font-size:16px;min-height:2.6em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pc .meta{color:var(--muted);font-size:13px;min-height:1.4em}
+.pc .pr{display:flex;align-items:baseline;gap:8px;margin-top:auto}
+.pc .pr b{font-size:21px}
+.old{color:var(--muted);text-decoration:line-through;font-size:14px}
+.pc .row{display:flex;gap:8px;margin-top:6px}
+.pc .row .btn{flex:1}
+.fav{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:#fff;box-shadow:var(--shadow);display:grid;place-items:center;z-index:2;color:var(--muted)}
+.fav.on{color:var(--red)}
+.fav svg{width:18px;height:18px}
+.badges{position:absolute;top:12px;left:12px;display:flex;flex-direction:column;gap:6px;z-index:2}
+.badge{font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;color:#fff;background:var(--accent)}
+.badge.sale{background:var(--red)}
+.st{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:3px 10px;border-radius:20px;width:fit-content}
+.st::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.st.ok{background:var(--green-l);color:var(--green)}
+.st.no{background:var(--grey-l);color:var(--muted)}
+.stars{color:var(--amber);font-size:13px;letter-spacing:1px}
+
+/* benefits */
+.ben{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ben div{background:var(--card);border-radius:var(--r);padding:26px;box-shadow:var(--shadow)}
+.ben .ic{width:52px;height:52px;border-radius:14px;background:var(--accent-l);color:var(--accent);display:grid;place-items:center;margin-bottom:14px}
+.ben .ic svg{width:28px;height:28px}
+.ben h3{font-size:19px;margin-bottom:6px}
+.ben p{color:var(--muted);font-size:15px}
+
+/* search block */
+.searchbox{background:var(--card);border-radius:24px;padding:36px;box-shadow:var(--shadow);text-align:center}
+.searchbox h2{margin-bottom:8px}
+.searchbox>p{color:var(--muted);margin-bottom:22px}
+.sform{display:flex;gap:12px;max-width:760px;margin:0 auto 14px}
+.sform input{flex:1;padding:16px 20px;border-radius:14px;border:2px solid var(--line);font-size:17px;background:#fff;min-width:0}
+.sform input:focus{border-color:var(--accent);outline:0}
+
+/* footer */
+footer{background:#10131c;color:#b7bcc9;margin-top:72px;padding:48px 0 28px}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+footer h4{color:#fff;margin-bottom:12px;font-size:15px}
+footer a{display:block;padding:3px 0;font-size:14px}
+footer a:hover{color:#fff}
+footer .cp{border-top:1px solid #262a37;margin-top:32px;padding-top:18px;font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* catalog */
+.pagehead{margin:28px 0 8px}
+.crumbs{font-size:14px;color:var(--muted);margin:24px 0 10px}
+.crumbs a:hover{color:var(--accent)}
+.catalog{display:grid;grid-template-columns:270px 1fr;gap:24px;align-items:start}
+.filters{background:var(--card);border-radius:var(--r);padding:20px;box-shadow:var(--shadow);position:sticky;top:84px}
+.filters h3{font-size:17px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+.filters h3 button{font-size:13px;color:var(--accent);font-weight:500}
+.fg{padding:14px 0;border-bottom:1px solid var(--line)}
+.fg:last-of-type{border-bottom:0}
+.fg>label.t,.fg>.t{display:block;font-weight:600;font-size:14px;margin-bottom:8px}
+.chk{display:flex;align-items:center;gap:8px;padding:3px 0;font-size:15px;cursor:pointer}
+.chk input{width:17px;height:17px;accent-color:var(--accent)}
+.fg select,.fg input[type=text],.fg input[type=search]{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.fg input[type=range]{width:100%;accent-color:var(--accent)}
+.rv{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+.toolbar{display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.toolbar .cnt{color:var(--muted);flex:1}
+.toolbar select{padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.filter-toggle{display:none}
+.more{text-align:center;margin-top:26px}
+.empty{background:var(--card);border-radius:var(--r);padding:48px;text-align:center;color:var(--muted)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.chip{background:var(--accent-l);color:var(--accent);padding:5px 12px;border-radius:20px;font-size:13px;font-weight:600}
+
+/* product page */
+.pd{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.gal{background:var(--card);border-radius:var(--r);padding:16px;box-shadow:var(--shadow);position:sticky;top:84px}
+.gal .main{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:12px;background:#fff;-webkit-overflow-scrolling:touch}
+.gal .main::-webkit-scrollbar{display:none}
+.gal .slide{flex:0 0 100%;scroll-snap-align:center;aspect-ratio:1/1;display:grid;place-items:center;padding:20px}
+.gal .slide svg{height:100%;width:auto}
+.gal .th{display:flex;gap:10px;margin-top:12px}
+.gal .th button{flex:1;aspect-ratio:1/1;border:2px solid var(--line);border-radius:12px;background:#fff;padding:6px;display:grid;place-items:center;max-width:90px}
+.gal .th button.on{border-color:var(--accent)}
+.gal .th svg{height:100%;width:auto}
+.gal .cap{text-align:center;font-size:13px;color:var(--muted);margin-top:8px;min-height:20px}
+.info h1{font-size:30px;margin-bottom:10px}
+.info .price{display:flex;align-items:center;gap:14px;margin:16px 0;flex-wrap:wrap}
+.info .price b{font-size:36px}
+.wr{background:var(--green-l);color:var(--green);font-weight:600;font-size:13px;padding:5px 12px;border-radius:20px}
+.info .acts{display:flex;gap:12px;margin:18px 0}
+.info .acts .btn-primary{flex:1}
+.lead{color:var(--muted);margin:10px 0 14px}
+.box{background:var(--card);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);margin-top:18px}
+.box h3{font-size:18px;margin-bottom:12px}
+table.spec{width:100%;border-collapse:collapse}
+table.spec td{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;vertical-align:top}
+table.spec tr:last-child td{border-bottom:0}
+table.spec td:first-child{color:var(--muted);width:46%;padding-right:12px}
+.ul{list-style:none}
+.ul li{padding:6px 0 6px 26px;position:relative}
+.ul li::before{content:"";position:absolute;left:0;top:12px;width:14px;height:8px;border-left:3px solid var(--green);border-bottom:3px solid var(--green);transform:rotate(-45deg) translateY(-4px)}
+.trust{background:var(--accent-l);border-radius:12px;padding:14px 16px;font-size:15px;margin-top:6px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:last-child{border-bottom:0}
+.faq summary{list-style:none;cursor:pointer;padding:14px 0;font-weight:600;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;line-height:1;color:var(--accent);transition:.2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 16px;color:var(--muted)}
+
+/* cart */
+.cartgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:start}
+.ci{display:grid;grid-template-columns:84px 1fr auto;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.ci:last-child{border-bottom:0}
+.ci .im{width:84px;height:84px;background:#fff;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;padding:6px}
+.ci .im svg{height:100%;width:auto}
+.ci .nm{font-weight:600}
+.ci .nm a:hover{color:var(--accent)}
+.ci .each{color:var(--muted);font-size:14px}
+.ci .right{text-align:right}
+.ci .right b{display:block;font-size:18px;margin-bottom:8px}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:6px}
+.qty button{width:34px;height:34px;font-size:18px}
+.qty button:hover{background:var(--accent-l)}
+.qty span{min-width:34px;text-align:center;font-weight:600}
+.rm{font-size:13px;color:var(--muted);text-decoration:underline}
+.rm:hover{color:var(--red)}
+.total{display:flex;justify-content:space-between;font-size:22px;font-weight:800;padding:14px 0 4px;border-top:2px solid var(--line);margin-top:6px}
+.sumrow{display:flex;justify-content:space-between;color:var(--muted);padding:3px 0}
+.form label.f{display:block;margin-bottom:14px;font-size:14px;font-weight:600}
+.form input[type=text],.form input[type=tel],.form input[type=email],.form textarea{display:block;width:100%;margin-top:6px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;font-weight:400}
+.form textarea{min-height:76px;resize:vertical}
+.form .invalid{border-color:var(--red)!important}
+.err{color:var(--red);font-size:13px;margin:-6px 0 12px;display:none}
+.err.show{display:block}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin:6px 0 16px;cursor:pointer}
+.agree input{margin-top:4px;width:17px;height:17px;accent-color:var(--accent)}
+.agree a{color:var(--accent);text-decoration:underline}
+
+/* success */
+.ok-card{max-width:640px;margin:48px auto;background:var(--card);border-radius:24px;padding:44px;text-align:center;box-shadow:var(--shadow)}
+.ok-card .big{width:76px;height:76px;border-radius:50%;background:var(--green-l);margin:0 auto 18px;display:grid;place-items:center}
+.ok-card .big::after{content:"";width:28px;height:15px;border-left:5px solid var(--green);border-bottom:5px solid var(--green);transform:rotate(-45deg) translate(2px,-3px)}
+.ok-card h1{font-size:30px;margin-bottom:6px}
+.ok-card .no{display:inline-block;background:var(--accent-l);color:var(--accent);font-weight:800;font-size:22px;padding:8px 20px;border-radius:12px;margin:14px 0}
+.ok-list{text-align:left;background:var(--bg);border-radius:14px;padding:16px 20px;margin:20px 0}
+.ok-list div{display:flex;justify-content:space-between;gap:12px;padding:6px 0}
+.ok-list span{color:var(--muted)}
+
+/* modal + toast */
+.ov{position:fixed;inset:0;background:rgba(10,14,28,.55);z-index:100;display:none;align-items:center;justify-content:center;padding:16px}
+.ov.show{display:flex}
+.modal{background:#fff;border-radius:22px;max-width:480px;width:100%;max-height:92vh;overflow:auto;padding:26px}
+.modal h3{font-size:22px;margin-bottom:6px}
+.modal .x{float:right;font-size:26px;line-height:1;color:var(--muted)}
+.modal .fg{border:0;padding:10px 0}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);background:#10131c;color:#fff;padding:13px 20px;border-radius:12px;opacity:0;pointer-events:none;transition:.25s;z-index:200;display:flex;gap:14px;align-items:center;font-size:15px}
+.toast.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.toast a{color:#9db4ff;font-weight:600}
+
+.static{max-width:780px;margin:12px 0 0}
+.static p{margin:12px 0;color:#2b303c}
+
+/* responsive */
+@media(max-width:1000px){
+  .tiles{grid-template-columns:repeat(3,1fr)}
+  .hero{grid-template-columns:1fr}
+  .hero .vis{height:320px;order:-1;padding-top:20px}
+  .hero .vis svg{height:300px;transform:translateY(30px) rotate(3deg)}
+  .hero .txt{padding:30px 28px 40px}
+  .hero h1{font-size:34px}
+  .grid,.grid.g4{grid-template-columns:repeat(2,1fr)}
+  .catalog{grid-template-columns:1fr}
+  .filters{position:static;display:none}
+  .filters.open{display:block}
+  .filter-toggle{display:inline-flex}
+  .pd,.cartgrid{grid-template-columns:1fr}
+  .gal{position:static}
+  footer .cols{grid-template-columns:1fr 1fr}
+  .top .tel{display:none}
+}
+@media(max-width:620px){
+  .wrap{padding:0 14px}
+  h2{font-size:23px}
+  section{margin:40px 0}
+  .tiles{grid-template-columns:repeat(2,1fr)}
+  .ben{grid-template-columns:1fr}
+  .grid,.grid.g4{gap:10px}
+  .pc .body{padding:12px}
+  .pc .nm{font-size:14px}
+  .pc .pr b{font-size:17px}
+  .pc .row .btn{padding:9px 6px;font-size:13px}
+  .pc .row .btn-ghost{display:none}
+  .nav{display:none}
+  .icon-btn span.lb{display:none}
+  .sform{flex-direction:column}
+  .searchbox{padding:24px 16px}
+  .ci{grid-template-columns:64px 1fr}
+  .ci .im{width:64px;height:64px}
+  .ci .right{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;text-align:left}
+  .ci .right b{margin:0}
+  .info h1{font-size:24px}
+  .info .price b{font-size:30px}
+  .hero{border-radius:20px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#/" class="logo"><i></i>Смартфон24</a>
+    <nav class="nav">
+      <a href="#/catalog" data-nav="catalog">Каталог</a>
+      <a href="#/page/returns" data-nav="page">Гарантия и возврат</a>
+      <a href="#/page/faq" data-nav="faq">FAQ</a>
+    </nav>
+    <div class="sp"></div>
+    <a class="tel" href="tel:+78005550199">8 800 555-01-99</a>
+    <a class="icon-btn" href="#/favorites" aria-label="Избранное">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7.5-4.6-9.6-9.2C.8 8.3 3 5 6.4 5c2 0 3.6 1 4.6 2.6h2C14 6 15.600 5 17.600 5 21 5 23.200 8.300 21.600 11.800 19.500 16.400 12 21 12 21z"/></svg>
+      <span class="n" id="favN" data-z="0"></span>
+    </a>
+    <a class="icon-btn" href="#/cart" aria-label="Корзина">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2l2.500 11h11l2-8H6.500"/><circle cx="9" cy="20" r="1.500"/><circle cx="17" cy="20" r="1.500"/></svg>
+      <span class="lb">Корзина</span><span class="n" id="cartN" data-z="0"></span>
+    </a>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="logo" style="color:#fff;margin-bottom:12px"><i></i>Смартфон24</div>
+        <p style="font-size:14px">Оригинальные смартфоны с официальной гарантией производителя. Доставка по всей России.</p>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <a href="tel:+78005550199">8 800 555-01-99</a>
+        <a href="mailto:support@smartfon24.example">support@smartfon24.example</a>
+        <a href="#/page/about">Ежедневно 9:00–21:00 (МСК)</a>
+      </div>
+      <div>
+        <h4>Покупателям</h4>
+        <a href="#/page/returns">Политика возврата</a>
+        <a href="#/page/faq">FAQ</a>
+        <a href="#/page/about">О нас</a>
+        <a href="#/page/privacy">Политика конфиденциальности</a>
+      </div>
+      <div>
+        <h4>Мы в соцсетях</h4>
+        <a href="#" onclick="return false">Telegram</a>
+        <a href="#" onclick="return false">VK</a>
+        <a href="#" onclick="return false">YouTube</a>
+      </div>
+    </div>
+    <div class="cp"><span>© 2026 Смартфон24. Демонстрационный магазин.</span><span>Все телефоны — оригинальные, с официальной гарантией производителя</span></div>
+  </div>
+</footer>
+
+<div class="ov" id="ov"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+/* ============ DATA ============ */
+const P = [
+ {id:1,brand:"Apple",name:"iPhone 13",mem:128,ram:4,price:79990,diag:6.1,type:"OLED",res:"2532×1170",cpu:"Apple A15 Bionic",cam:12,camTxt:"12 МП (широкоугольная) + 12 МП (ультраширокая)",front:"12 МП",bat:3240,os:"iOS 16",sim:"nano‑SIM + eSIM",ip:"IP68",w:173,color:"Midnight",hex:"#1f2430",stock:3,badge:"hit",rating:4.8,date:20210914,tag:[],desc:"Смартфон с отличной камерой и автономностью: хватит на полный день активного использования."},
+ {id:2,brand:"Apple",name:"iPhone 14",mem:128,ram:6,price:89990,diag:6.1,type:"OLED",res:"2532×1170",cpu:"Apple A15 Bionic (5 ядер GPU)",cam:12,camTxt:"12 МП (широкоугольная) + 12 МП (ультраширокая)",front:"12 МП",bat:3279,os:"iOS 16",sim:"nano‑SIM + eSIM",ip:"IP68",w:172,color:"Starlight",hex:"#e9e4da",stock:5,badge:"",rating:4.8,date:20220907,tag:[],desc:"Яркий OLED-экран, стабильная съёмка в темноте и быстрая работа на каждый день."},
+ {id:3,brand:"Apple",name:"iPhone 15 Pro",mem:256,ram:8,price:129990,diag:6.1,type:"LTPO OLED",res:"2556×1179",cpu:"Apple A17 Pro",cam:48,camTxt:"48 МП (основная) + 12 МП (ультраширокая) + 12 МП (телефото 3×)",front:"12 МП",bat:3274,os:"iOS 17",sim:"nano‑SIM + eSIM",ip:"IP68",w:187,color:"Natural Titanium",hex:"#9a958b",stock:2,badge:"hit",rating:4.9,date:20230922,tag:["cam"],desc:"Титановый корпус, 48-мегапиксельная камера и топовая производительность."},
+ {id:4,brand:"Apple",name:"iPhone 15",mem:128,ram:6,price:84990,diag:6.1,type:"OLED",res:"2556×1179",cpu:"Apple A16 Bionic",cam:48,camTxt:"48 МП (основная) + 12 МП (ультраширокая)",front:"12 МП",bat:3349,os:"iOS 17",sim:"nano‑SIM + eSIM",ip:"IP68",w:171,color:"Pink",hex:"#f1cfd2",stock:4,badge:"sale",disc:10,rating:4.8,date:20230922,tag:["cam"],desc:"USB-C, Dynamic Island и 48 МП основная камера по цене ниже флагмана."},
+ {id:5,brand:"Apple",name:"iPhone 12",mem:64,ram:4,price:49990,diag:6.1,type:"OLED",res:"2532×1170",cpu:"Apple A14 Bionic",cam:12,camTxt:"12 МП (широкоугольная) + 12 МП (ультраширокая)",front:"12 МП",bat:2815,os:"iOS 14",sim:"nano‑SIM + eSIM",ip:"IP68",w:164,color:"Blue",hex:"#3f6a95",stock:0,badge:"",rating:4.6,date:20201023,tag:[],desc:"Проверенная модель с OLED-экраном и поддержкой 5G по доступной цене."},
+ {id:6,brand:"Samsung",name:"Galaxy S23",mem:256,ram:8,price:69990,diag:6.1,type:"Dynamic AMOLED 2X",res:"2340×1080",cpu:"Snapdragon 8 Gen 2",cam:50,camTxt:"50 МП (основная) + 12 МП (ультраширокая) + 10 МП (телефото 3×)",front:"12 МП",bat:3900,os:"Android 13",sim:"nano‑SIM + eSIM",ip:"IP68",w:168,color:"Phantom Black",hex:"#22242b",stock:6,badge:"sale",disc:15,rating:4.7,date:20230217,tag:["cam"],desc:"Компактный флагман: быстрый процессор, яркий экран 120 Гц и сильная камера."},
+ {id:7,brand:"Samsung",name:"Galaxy S24 Ultra",mem:256,ram:12,price:119990,diag:6.8,type:"Dynamic AMOLED 2X",res:"3120×1440",cpu:"Snapdragon 8 Gen 3 for Galaxy",cam:200,camTxt:"200 МП (основная) + 12 МП (ультраширокая) + 10 МП + 50 МП (телефото)",front:"12 МП",bat:5000,os:"Android 14",sim:"nano‑SIM + eSIM",ip:"IP68",w:232,color:"Titanium Gray",hex:"#7c7e83",stock:3,badge:"hit",rating:4.9,date:20240124,tag:["cam"],desc:"Флагман с 200-мегапиксельной камерой, стилусом S Pen и аккумулятором на полтора дня."},
+ {id:8,brand:"Samsung",name:"Galaxy A54",mem:128,ram:8,price:29990,diag:6.4,type:"Super AMOLED",res:"2340×1080",cpu:"Exynos 1380",cam:50,camTxt:"50 МП (основная) + 12 МП (ультраширокая) + 5 МП (макро)",front:"32 МП",bat:5000,os:"Android 13",sim:"nano‑SIM + nano‑SIM",ip:"IP67",w:202,color:"Awesome Graphite",hex:"#2b2d33",stock:9,badge:"hit",rating:4.6,date:20230315,tag:[],desc:"Сбалансированный смартфон среднего класса с защитой от воды и ёмкой батареей."},
+ {id:9,brand:"Samsung",name:"Galaxy A15",mem:128,ram:4,price:13990,diag:6.5,type:"Super AMOLED",res:"2340×1080",cpu:"MediaTek Helio G99",cam:50,camTxt:"50 МП (основная) + 5 МП (ультраширокая) + 2 МП (макро)",front:"13 МП",bat:5000,os:"Android 14",sim:"nano‑SIM + nano‑SIM",ip:"нет",w:200,color:"Blue",hex:"#5578b8",stock:12,badge:"",rating:4.3,date:20231211,tag:[],desc:"Доступный смартфон с AMOLED-экраном и батареей на два дня обычного использования."},
+ {id:10,brand:"Samsung",name:"Galaxy S23 FE",mem:128,ram:8,price:44990,diag:6.4,type:"Dynamic AMOLED 2X",res:"2340×1080",cpu:"Exynos 2200",cam:50,camTxt:"50 МП (основная) + 12 МП (ультраширокая) + 8 МП (телефото 3×)",front:"10 МП",bat:4500,os:"Android 13",sim:"nano‑SIM + eSIM",ip:"IP68",w:209,color:"Mint",hex:"#9fd3c0",stock:0,badge:"",rating:4.5,date:20231004,tag:["cam"],desc:"Флагманский опыт Samsung в более доступной версии."},
+ {id:11,brand:"Xiaomi",name:"Xiaomi 14",mem:256,ram:12,price:74990,diag:6.36,type:"LTPO AMOLED",res:"2670×1200",cpu:"Snapdragon 8 Gen 3",cam:50,camTxt:"50 МП Leica (основная) + 50 МП (телефото 3.2×) + 50 МП (ультраширокая)",front:"32 МП",bat:4610,os:"Android 14 (HyperOS)",sim:"nano‑SIM + nano‑SIM",ip:"IP68",w:193,color:"White",hex:"#eceae6",stock:4,badge:"sale",disc:12,rating:4.8,date:20240226,tag:["cam"],desc:"Компактный флагман с оптикой Leica и зарядкой 90 Вт."},
+ {id:12,brand:"Xiaomi",name:"Xiaomi 13T",mem:256,ram:12,price:39990,diag:6.67,type:"AMOLED",res:"2712×1220",cpu:"MediaTek Dimensity 8200-Ultra",cam:50,camTxt:"50 МП Leica (основная) + 50 МП (телефото 2×) + 12 МП (ультраширокая)",front:"20 МП",bat:5000,os:"Android 13 (MIUI 14)",sim:"nano‑SIM + nano‑SIM",ip:"IP68",w:197,color:"Black",hex:"#1d1f24",stock:7,badge:"hit",rating:4.7,date:20230926,tag:["cam"],desc:"Большой экран 144 Гц, камера Leica и быстрая зарядка 67 Вт."},
+ {id:13,brand:"Xiaomi",name:"Redmi Note 13 Pro",mem:256,ram:8,price:25990,diag:6.67,type:"AMOLED",res:"2712×1220",cpu:"Snapdragon 7s Gen 2",cam:200,camTxt:"200 МП (основная) + 8 МП (ультраширокая) + 2 МП (макро)",front:"16 МП",bat:5100,os:"Android 13 (MIUI 14)",sim:"nano‑SIM + nano‑SIM",ip:"IP54",w:187,color:"Midnight Black",hex:"#25272d",stock:15,badge:"hit",rating:4.6,date:20240110,tag:["cam"],desc:"200-мегапиксельная камера и AMOLED 120 Гц в среднем сегменте."},
+ {id:14,brand:"Xiaomi",name:"Redmi Note 12",mem:128,ram:6,price:17990,diag:6.67,type:"AMOLED",res:"2400×1080",cpu:"Snapdragon 685",cam:50,camTxt:"50 МП (основная) + 8 МП (ультраширокая) + 2 МП (макро)",front:"13 МП",bat:5000,os:"Android 13 (MIUI 14)",sim:"nano‑SIM + nano‑SIM",ip:"IP53",w:183,color:"Gray",hex:"#6c7079",stock:11,badge:"",rating:4.4,date:20230413,tag:[],desc:"Надёжный бюджетник с AMOLED-экраном и батареей на весь день."},
+ {id:15,brand:"Xiaomi",name:"Redmi 12",mem:128,ram:4,price:11990,diag:6.79,type:"IPS LCD",res:"2460×1080",cpu:"MediaTek Helio G88",cam:50,camTxt:"50 МП (основная) + 8 МП (ультраширокая) + 2 МП (макро)",front:"8 МП",bat:5000,os:"Android 13 (MIUI 14)",sim:"nano‑SIM + nano‑SIM",ip:"IP53",w:198,color:"Sky Blue",hex:"#7ea6d8",stock:20,badge:"sale",disc:8,rating:4.2,date:20230601,tag:[],desc:"Самый доступный вариант в линейке: большой экран и ёмкая батарея."},
+ {id:16,brand:"Xiaomi",name:"POCO X6 Pro",mem:256,ram:8,price:27990,diag:6.67,type:"AMOLED",res:"2712×1220",cpu:"MediaTek Dimensity 8300-Ultra",cam:64,camTxt:"64 МП (основная, OIS) + 8 МП (ультраширокая) + 2 МП (макро)",front:"16 МП",bat:5000,os:"Android 14 (HyperOS)",sim:"nano‑SIM + nano‑SIM",ip:"IP54",w:186,color:"Yellow",hex:"#e6c73a",stock:8,badge:"",rating:4.7,date:20240111,tag:["cam"],desc:"Производительный смартфон для игр: мощный чип и экран 120 Гц."}
+];
+const byId = id => P.find(p => p.id === +id);
+const curPrice = p => p.disc ? Math.round(p.price*(1-p.disc/100)/100)*100 - 10 : p.price;
+// price stored = старая цена; для скидочных текущая считается выше
+const oldPrice = p => p.disc ? p.price : 0;
+const cost = p => curPrice(p);
+const fmt = n => n.toLocaleString("ru-RU").replace(/\u00a0/g," ") + " ₽";
+const HITS = [1,3,7,8,12,13];
+const BRANDS = ["Apple","Samsung","Xiaomi"];
+const PER_PAGE = 9;
+
+/* ============ STORAGE ============ */
+const store = {
+  get(k,d){ try{ const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return mem[k] ?? d; } },
+  set(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){ mem[k] = v; } }
+};
+const mem = {};
+let cart = store.get("s24_cart", []);   // [{id, qty}]
+let favs = store.get("s24_favs", []);   // [id]
+const saveCart = () => { store.set("s24_cart", cart); updBadges(); };
+const saveFavs = () => { store.set("s24_favs", favs); updBadges(); };
+function updBadges(){
+  const c = cart.reduce((s,i)=>s+i.qty,0);
+  const cn = document.getElementById("cartN"); cn.textContent = c||""; cn.dataset.z = c;
+  const fn = document.getElementById("favN"); fn.textContent = favs.length||""; fn.dataset.z = favs.length;
+}
+
+/* ============ SVG PHONES ============ */
+function shade(hex, amt){
+  const n = parseInt(hex.slice(1),16);
+  let r = (n>>16)+amt, g = ((n>>8)&255)+amt, b = (n&255)+amt;
+  r=Math.max(0,Math.min(255,r)); g=Math.max(0,Math.min(255,g)); b=Math.max(0,Math.min(255,b));
+  return "#"+((1<<24)+(r<<16)+(g<<8)+b).toString(16).slice(1);
+}
+function lens(cx,cy,r){
+  return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="#12141a" stroke="#4a4e5a" stroke-width="2"/><circle cx="${cx}" cy="${cy}" r="${r*0.55}" fill="#1d2433"/><circle cx="${cx-r*0.2}" cy="${cy-r*0.2}" r="${r*0.16}" fill="#6d86c9" opacity=".7"/>`;
+}
+function phoneSVG(p, view){
+  const c = p.hex, d = shade(c,-28), l = shade(c,26);
+  const id = "g"+p.id+view;
+  const defs = `<defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${l}"/><stop offset="1" stop-color="${d}"/></linearGradient>
+  <linearGradient id="${id}s" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a2146"/><stop offset=".5" stop-color="#3b57d9"/><stop offset="1" stop-color="#7a4ad6"/></linearGradient></defs>`;
+  const apple = p.brand==="Apple", sam = p.brand==="Samsung";
+  if(view==="front"){
+    const notch = apple ? `<rect x="73" y="26" width="54" height="14" rx="7" fill="#05060a"/>` : `<circle cx="100" cy="34" r="5.500" fill="#05060a"/>`;
+    return `<svg viewBox="0 0 200 400" role="img" aria-label="${p.name}, вид спереди">${defs}
+      <rect x="22" y="8" width="156" height="384" rx="30" fill="url(#${id})" stroke="${d}" stroke-width="2"/>
+      <rect x="29" y="15" width="142" height="370" rx="24" fill="#05060a"/>
+      <rect x="33" y="19" width="134" height="362" rx="21" fill="url(#${id}s)"/>
+      <circle cx="100" cy="190" r="60" fill="#fff" opacity=".07"/>
+      <rect x="60" y="98" width="80" height="10" rx="5" fill="#fff" opacity=".85"/>
+      <rect x="76" y="116" width="48" height="6" rx="3" fill="#fff" opacity=".45"/>
+      ${notch}
+      <rect x="75" y="368" width="50" height="4" rx="2" fill="#fff" opacity=".55"/></svg>`;
+  }
+  if(view==="side"){
+    return `<svg viewBox="0 0 200 400" role="img" aria-label="${p.name}, вид сбоку">${defs}
+      <rect x="82" y="8" width="36" height="384" rx="14" fill="url(#${id})" stroke="${d}" stroke-width="2"/>
+      <rect x="116" y="96" width="5" height="46" rx="2.500" fill="${d}"/>
+      <rect x="116" y="152" width="5" height="46" rx="2.500" fill="${d}"/>
+      <rect x="79" y="120" width="5" height="64" rx="2.500" fill="${d}"/>
+      <rect x="92" y="8" width="16" height="4" rx="2" fill="${l}" opacity=".7"/>
+      <rect x="87" y="14" width="2" height="372" fill="#fff" opacity=".25"/></svg>`;
+  }
+  if(view==="camera"){
+    let cams;
+    if(apple) cams = `<rect x="40" y="30" width="86" height="86" rx="22" fill="${d}" opacity=".55" stroke="${l}" stroke-width="2"/>${lens(66,56,15)}${lens(66,92,15)}${p.cam>=48&&p.id===3?lens(104,74,15):""}<circle cx="108" cy="46" r="5" fill="#f4f0d8"/>`;
+    else if(sam) cams = `${lens(60,50,17)}${lens(60,92,17)}${lens(60,134,17)}<circle cx="94" cy="50" r="5" fill="#f4f0d8"/>`;
+    else cams = `<rect x="34" y="28" width="104" height="104" rx="26" fill="#14161c" stroke="${l}" stroke-width="2" opacity=".95"/>${lens(70,62,20)}${lens(108,62,12)}${lens(70,104,12)}<circle cx="108" cy="100" r="6" fill="#f4f0d8"/>`;
+    return `<svg viewBox="0 0 200 400" role="img" aria-label="${p.name}, блок камер">${defs}
+      <rect x="22" y="8" width="156" height="384" rx="30" fill="url(#${id})" stroke="${d}" stroke-width="2"/>
+      ${cams}
+      <circle cx="100" cy="270" r="14" fill="${d}" opacity=".35"/></svg>`;
+  }
+  // port
+  return `<svg viewBox="0 0 200 400" role="img" aria-label="${p.name}, разъём">${defs}
+    <rect x="22" y="130" width="156" height="150" rx="26" fill="url(#${id})" stroke="${d}" stroke-width="2"/>
+    <rect x="76" y="192" width="48" height="16" rx="8" fill="#0b0c10"/>
+    <rect x="82" y="197" width="36" height="6" rx="3" fill="#3a3e4a"/>
+    ${[0,1,2,3,4].map(i=>`<circle cx="${40+i*8}" cy="200" r="2.200" fill="#0b0c10"/><circle cx="${128+i*8}" cy="200" r="2.200" fill="#0b0c10"/>`).join("")}
+    <circle cx="100" cy="160" r="3" fill="#0b0c10" opacity=".6"/></svg>`;
+}
+const VIEWS = [["front","Вид спереди"],["side","Вид сбоку"],["camera","Блок камер"],["port","Разъём"]];
+
+/* ============ HELPERS ============ */
+const $ = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
+const esc = s => String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fullName = p => `${p.name} ${p.mem} ГБ`;
+const stars = r => "★".repeat(Math.round(r)) + "☆".repeat(5-Math.round(r));
+function toast(html){
+  const t = $("#toast"); t.innerHTML = html; t.classList.add("show");
+  clearTimeout(toast.t); toast.t = setTimeout(()=>t.classList.remove("show"), 3200);
+}
+function addToCart(id){
+  const it = cart.find(i=>i.id===id);
+  if(it) it.qty++; else cart.push({id,qty:1});
+  saveCart();
+  toast(`✓ ${esc(fullName(byId(id)))} добавлен в корзину <a href="#/cart">Перейти</a>`);
+}
+function toggleFav(id){
+  const i = favs.indexOf(id);
+  if(i>-1) favs.splice(i,1); else favs.push(id);
+  saveFavs();
+}
+const heart = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.500-4.600-9.600-9.200C.8 8.300 3 5 6.400 5c2 0 3.600 1 4.600 2.600h2C14 6 15.600 5 17.600 5 21 5 23.200 8.300 21.600 11.800 19.500 16.400 12 21 12 21z"/></svg>`;
+
+function card(p){
+  const bd = [];
+  if(p.badge==="hit") bd.push(`<span class="badge">Хит</span>`);
+  if(p.disc) bd.push(`<span class="badge sale">Скидка ${p.disc}%</span>`);
+  const inStock = p.stock>0;
+  return `<article class="pc">
+    <div class="badges">${bd.join("")}</div>
+    <button class="fav ${favs.includes(p.id)?"on":""}" data-fav="${p.id}" aria-label="В избранное">${heart}</button>
+    <a href="#/product/${p.id}" class="img" aria-label="${esc(fullName(p))}">${phoneSVG(p,"front")}</a>
+    <div class="body">
+      <a href="#/product/${p.id}" class="nm">${esc(fullName(p))}</a>
+      <div class="meta">${p.diag}″ · ${p.cam} МП · <span class="stars">${stars(p.rating)}</span> ${p.rating}</div>
+      <span class="st ${inStock?"ok":"no"}">${inStock?"В наличии":"Под заказ"}</span>
+      <div class="pr"><b>${fmt(cost(p))}</b>${p.disc?`<span class="old">${fmt(oldPrice(p))}</span>`:""}</div>
+      <div class="row"><button class="btn btn-primary btn-sm" data-add="${p.id}">В корзину</button></div>
+    </div>
+  </article>`;
+}
+
+/* ============ FILTERS ============ */
+const defF = () => ({q:"",brands:[],priceMax:130000,diagMin:0,mems:[],camMin:0,stockOnly:false,tag:"",sort:"hit",shown:PER_PAGE});
+let F = defF();
+const TAGS = {
+  iphone:{t:"iPhone",f:{brands:["Apple"]}},
+  samsung:{t:"Samsung",f:{brands:["Samsung"]}},
+  xiaomi:{t:"Xiaomi",f:{brands:["Xiaomi"]}},
+  budget:{t:"Бюджетные",f:{priceMax:20000}},
+  flagship:{t:"Флагманы",f:{tag:"flagship"}},
+  camera:{t:"С хорошей камерой",f:{tag:"cam"}}
+};
+function applyPreset(key){
+  F = defF();
+  const t = TAGS[key]; if(t) Object.assign(F, t.f);
+}
+function goCatalog(preset){
+  if(preset) applyPreset(preset);
+  if(location.hash === "#/catalog") route(); else location.hash = "#/catalog";
+}
+function filterList(){
+  let list = P.filter(p=>{
+    if(F.q){
+      const s = (p.brand+" "+p.name+" "+p.mem+" "+p.color).toLowerCase();
+      if(!F.q.toLowerCase().split(/\s+/).every(w=>s.includes(w))) return false;
+    }
+    if(F.brands.length && !F.brands.includes(p.brand)) return false;
+    if(cost(p) > F.priceMax) return false;
+    if(p.diag < F.diagMin) return false;
+    if(F.mems.length && !F.mems.includes(p.mem)) return false;
+    if(p.cam < F.camMin) return false;
+    if(F.stockOnly && p.stock<=0) return false;
+    if(F.tag==="cam" && !p.tag.includes("cam")) return false;
+    if(F.tag==="flagship" && cost(p) < 70000) return false;
+    return true;
+  });
+  const s = F.sort;
+  list.sort((a,b)=>{
+    if(s==="price-asc") return cost(a)-cost(b);
+    if(s==="price-desc") return cost(b)-cost(a);
+    if(s==="new") return b.date-a.date;
+    if(s==="rating") return b.rating-a.rating || cost(a)-cost(b);
+    return (HITS.includes(b.id)-HITS.includes(a.id)) || b.rating-a.rating;
+  });
+  return list;
+}
+function filtersHTML(pre){
+  const c = (cond)=>cond?"checked":"";
+  return `
+  <div class="fg"><label class="t" for="${pre}q">Поиск</label><input type="search" id="${pre}q" data-f="q" placeholder="Название или модель" value="${esc(F.q)}"></div>
+  <div class="fg"><div class="t">Бренд</div>
+    ${BRANDS.map(b=>`<label class="chk"><input type="checkbox" data-f="brand" value="${b}" ${c(F.brands.includes(b))}> ${b}</label>`).join("")}
+  </div>
+  <div class="fg"><label class="t" for="${pre}pr">Бюджет: до <span data-pv>${fmt(F.priceMax)}</span></label>
+    <input type="range" id="${pre}pr" data-f="priceMax" min="10000" max="130000" step="1000" value="${F.priceMax}">
+    <div class="rv"><span>10 000 ₽</span><span>130 000 ₽</span></div>
+  </div>
+  <div class="fg"><label class="t" for="${pre}dg">Диагональ экрана</label>
+    <select id="${pre}dg" data-f="diagMin">${[[0,"Любая"],[6,"от 6″"],[6.4,"от 6.4″"],[6.7,"от 6.7″"]].map(([v,t])=>`<option value="${v}" ${F.diagMin==v?"selected":""}>${t}</option>`).join("")}</select>
+  </div>
+  <div class="fg"><div class="t">Встроенная память</div>
+    ${[64,128,256].map(m=>`<label class="chk"><input type="checkbox" data-f="mem" value="${m}" ${c(F.mems.includes(m))}> ${m} ГБ</label>`).join("")}
+  </div>
+  <div class="fg"><label class="t" for="${pre}cm">Основная камера</label>
+    <select id="${pre}cm" data-f="camMin">${[[0,"Любая"],[12,"от 12 МП"],[50,"от 50 МП"],[108,"от 108 МП"]].map(([v,t])=>`<option value="${v}" ${F.camMin==v?"selected":""}>${t}</option>`).join("")}</select>
+  </div>
+  <div class="fg"><label class="chk"><input type="checkbox" data-f="stock" ${c(F.stockOnly)}> Только в наличии</label></div>`;
+}
+function readFilters(root){
+  const g = s=>$(s,root);
+  F.q = g('[data-f="q"]').value.trim();
+  F.brands = $$('[data-f="brand"]:checked',root).map(i=>i.value);
+  F.priceMax = +g('[data-f="priceMax"]').value;
+  F.diagMin = +g('[data-f="diagMin"]').value;
+  F.mems = $$('[data-f="mem"]:checked',root).map(i=>+i.value);
+  F.camMin = +g('[data-f="camMin"]').value;
+  F.stockOnly = g('[data-f="stock"]').checked;
+  F.shown = PER_PAGE;
+}
+
+/* ============ VIEWS ============ */
+const app = $("#app");
+function setNav(k){ $$(".nav a").forEach(a=>a.classList.toggle("on", a.dataset.nav===k)); }
+
+function viewHome(){
+  setNav("");
+  const hero = byId(3);
+  app.innerHTML = `
+  <div class="wrap">
+    <section class="hero" style="margin-top:28px" aria-label="Главный экран">
+      <div class="txt">
+        <h1>Лучшие смартфоны с гарантией и быстрой доставкой</h1>
+        <p>Оригинальные модели с официальной гарантией производителя.</p>
+        <span class="tag">Скидки до 20% на популярные модели</span><br>
+        <button class="btn btn-primary btn-lg" data-go="hits">Выбрать телефон</button>
+      </div>
+      <div class="vis">${phoneSVG({...hero,hex:"#4a4f63"},"front")}</div>
+    </section>
+
+    <section>
+      <h2>Категории</h2>
+      <div class="tiles">
+        ${[["iphone","iPhone","",""],["samsung","Samsung","",""],["xiaomi","Xiaomi","",""],["budget","Бюджетные","до 20 000 ₽",""],["flagship","Флагманы","от 70 000 ₽",""],["camera","С хорошей камерой","50 МП и выше",""]].map(([k,t,s],i)=>`
+          <a href="#/catalog" class="tile" data-preset="${k}"><div class="ic">${["","","","₽","★","◉"][i]||`<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2f5bff" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2.500"/><path d="M11 18h2"/></svg>`}</div>${t}<small>${s||"&nbsp;"}</small></a>`).join("")}
+      </div>
+    </section>
+
+    <section id="hits">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px"><h2>Хиты недели</h2><a href="#/catalog" class="btn btn-ghost btn-sm" data-preset="">Весь каталог →</a></div>
+      <div class="grid">${HITS.map(id=>card(byId(id))).join("")}</div>
+    </section>
+
+    <section>
+      <div class="ben">
+        <div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 4.500-3.300 7.800-8 9-4.700-1.200-8-4.500-8-9V6z"/><path d="M8.500 12l2.500 2.500 4.500-5"/></svg></div><h3>Гарантия 1 год</h3><p>Официальная гарантия производителя на все смартфоны.</p></div>
+        <div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12a8 8 0 1 0 3-6.200"/><path d="M4 4v4.500h4.500"/></svg></div><h3>Возврат в течение 14 дней</h3><p>Если не подошёл — вернём деньги при сохранении упаковки и товарного вида.</p></div>
+        <div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h11v10H2zM13 9h5l3 3v4h-8z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div><h3>Доставка по всей России</h3><p>Курьером или в пункт выдачи, от 2 до 5 дней.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="searchbox">
+        <h2>Найдите свой смартфон</h2>
+        <p>Введите название модели или подберите телефон по параметрам: экран, память, камера, бюджет.</p>
+        <form class="sform" id="homeSearch" role="search">
+          <input type="search" name="q" placeholder="Например: iPhone 13 или Redmi Note" aria-label="Поиск по названию или модели">
+          <button class="btn btn-primary" type="submit">Найти</button>
+        </form>
+        <button class="btn btn-ghost" data-open="picker">Подобрать по параметрам</button>
+      </div>
+    </section>
+  </div>`;
+}
+
+function viewCatalog(){
+  setNav("catalog");
+  const list = filterList();
+  const shown = list.slice(0, F.shown);
+  const chips = [];
+  if(F.tag && TAGS[F.tag==="cam"?"camera":F.tag]) chips.push(TAGS[F.tag==="cam"?"camera":F.tag].t);
+  app.innerHTML = `
+  <div class="wrap">
+    <div class="crumbs"><a href="#/">Главная</a> / Каталог</div>
+    <h1 style="font-size:34px;margin-bottom:20px">Каталог телефонов</h1>
+    <div class="catalog">
+      <aside class="filters" id="filters" aria-label="Фильтры">
+        <h3>Фильтры <button data-reset>Сбросить</button></h3>
+        <div id="filtersBody">${filtersHTML("c")}</div>
+      </aside>
+      <div>
+        <div class="toolbar">
+          <button class="btn btn-ghost btn-sm filter-toggle" data-toggle-filters>⚙ Фильтры</button>
+          <span class="cnt" id="cnt">Найдено: ${list.length}</span>
+          <label for="sort" style="color:var(--muted);font-size:14px">Сортировка</label>
+          <select id="sort">
+            ${[["hit","По популярности"],["price-asc","По цене: сначала дешёвые"],["price-desc","По цене: сначала дорогие"],["new","По новизне"],["rating","По рейтингу"]].map(([v,t])=>`<option value="${v}" ${F.sort===v?"selected":""}>${t}</option>`).join("")}
+          </select>
+        </div>
+        ${F.tag==="flagship"?`<div class="chips"><span class="chip">Флагманы: от 70 000 ₽</span></div>`:""}
+        ${F.tag==="cam"?`<div class="chips"><span class="chip">С хорошей камерой</span></div>`:""}
+        <div id="results"></div>
+      </div>
+    </div>
+  </div>`;
+  renderResults();
+}
+function renderResults(){
+  const list = filterList();
+  const shown = list.slice(0, F.shown);
+  $("#cnt").textContent = "Найдено: " + list.length;
+  $("#results").innerHTML = list.length
+    ? `<div class="grid">${shown.map(card).join("")}</div>
+       ${shown.length<list.length?`<div class="more"><button class="btn btn-ghost" data-more>Показать ещё (${list.length-shown.length})</button></div>`:""}`
+    : `<div class="empty"><h3 style="color:var(--text);margin-bottom:6px">Ничего не найдено</h3><p>Попробуйте изменить параметры или сбросить фильтры.</p><button class="btn btn-primary" style="margin-top:16px" data-reset>Сбросить фильтры</button></div>`;
+}
+
+function specsRows(p){
+  return [
+   ["Диагональ экрана", p.diag+" дюйма"],["Тип экрана", p.type],["Разрешение", p.res+" пикселей"],
+   ["Процессор", p.cpu],["Оперативная память", p.ram+" ГБ"],["Встроенная память", p.mem+" ГБ"],
+   ["Основная камера", p.camTxt],["Фронтальная камера", p.front],["Аккумулятор", p.bat+" мА·ч"],
+   ["Операционная система", p.os],["Поддержка SIM", p.sim],["Защита от воды", p.ip],["Вес", p.w+" г"]
+  ].map(([a,b])=>`<tr><td>${a}</td><td>${esc(b)}</td></tr>`).join("");
+}
+function viewProduct(id){
+  const p = byId(id);
+  if(!p){ return view404(); }
+  setNav("catalog");
+  const inStock = p.stock>0;
+  const box = p.brand==="Apple" ? ["Смартфон","Кабель USB‑C — Lightning","Документация"] : ["Смартфон","Кабель USB‑C","Инструмент для извлечения SIM-лотка","Документация"];
+  const sim = P.filter(x=>x.id!==p.id && (x.brand===p.brand || Math.abs(cost(x)-cost(p))<12000)).slice(0,3);
+  document.title = fullName(p)+" — Смартфон24";
+  app.innerHTML = `
+  <div class="wrap">
+    <div class="crumbs"><a href="#/">Главная</a> / <a href="#/catalog" data-preset="">Каталог</a> / ${esc(p.name)}</div>
+    <div class="pd">
+      <div class="gal">
+        <div class="main" id="gal" aria-label="Фотогалерея">${VIEWS.map(([v])=>`<div class="slide">${phoneSVG(p,v)}</div>`).join("")}</div>
+        <div class="cap" id="galCap">${VIEWS[0][1]}</div>
+        <div class="th">${VIEWS.map(([v,t],i)=>`<button class="${i?"":"on"}" data-slide="${i}" aria-label="${t}">${phoneSVG(p,v)}</button>`).join("")}</div>
+      </div>
+      <div class="info">
+        <h1>${esc(p.name)}, ${p.mem} ГБ, ${esc(p.color)}</h1>
+        <div><span class="stars">${stars(p.rating)}</span> <span style="color:var(--muted);font-size:14px">${p.rating} · рейтинг покупателей</span></div>
+        <div class="price"><b>${fmt(cost(p))}</b>${p.disc?`<span class="old" style="font-size:18px">${fmt(oldPrice(p))}</span><span class="badge sale">−${p.disc}%</span>`:""}<span class="wr">Гарантия 1 год</span></div>
+        <span class="st ${inStock?"ok":"no"}">${inStock?`В наличии · ${p.stock} шт. на складе`:"Под заказ · 5–7 дней"}</span>
+        <p class="lead">${esc(p.desc)}</p>
+        <div class="acts">
+          <button class="btn btn-primary btn-lg" data-add="${p.id}">В корзину</button>
+          <button class="btn btn-ghost btn-lg" data-fav="${p.id}" id="favBtn">${favs.includes(p.id)?"♥ В избранном":"♡ В избранное"}</button>
+        </div>
+        <div class="trust">Все телефоны — оригинальные, с официальной гарантией производителя.</div>
+
+        <div class="box"><h3>Характеристики</h3>
+          <table class="spec"><tbody>${specsRows(p)}</tbody></table></div>
+
+        <div class="box"><h3>Комплектация</h3>
+          <ul class="ul">${box.map(b=>`<li>${b}</li>`).join("")}</ul></div>
+
+        <div class="box"><h3>Гарантия и возврат</h3>
+          <ul class="ul">
+            <li><b>Гарантия:</b> 1 год</li>
+            <li><b>Возврат:</b> возможен в течение 14 дней при сохранении упаковки и товарного вида</li>
+            <li><b>Поддержка:</b> чат на сайте, телефон 8 800 555-01-99, email support@smartfon24.example</li>
+          </ul></div>
+
+        <div class="box faq"><h3>Частые вопросы</h3>
+          <details><summary>Как проверить оригинальность?</summary><p>Каждый смартфон поставляется в заводской упаковке с серийным номером и IMEI. Проверить их можно на официальном сайте производителя или в меню настроек телефона. Мы работаем только с официальными поставщиками.</p></details>
+          <details><summary>Есть ли рассрочка?</summary><p>Да, рассрочка доступна на срок от 6 до 24 месяцев — параметры уточнит менеджер при подтверждении заказа.</p></details>
+          <details><summary>Сколько дней доставка?</summary><p>В среднем 2–5 дней по России. Товары «Под заказ» доставляются на 3–5 дней дольше.</p></details>
+        </div>
+      </div>
+    </div>
+    ${sim.length?`<section><h2>Похожие модели</h2><div class="grid">${sim.map(card).join("")}</div></section>`:""}
+  </div>`;
+  const gal = $("#gal");
+  gal.addEventListener("scroll", ()=>{
+    const i = Math.round(gal.scrollLeft/gal.clientWidth);
+    $$(".th button").forEach((b,k)=>b.classList.toggle("on",k===i));
+    $("#galCap").textContent = VIEWS[i]?.[1] || "";
+  },{passive:true});
+}
+
+function cartTotal(){ return cart.reduce((s,i)=>s+cost(byId(i.id))*i.qty,0); }
+function viewCart(){
+  setNav("");
+  if(!cart.length){
+    app.innerHTML = `<div class="wrap"><div class="crumbs"><a href="#/">Главная</a> / Корзина</div><div class="empty" style="margin:20px 0"><h2 style="color:var(--text)">Корзина пуста</h2><p style="margin-bottom:18px">Выберите телефон в каталоге — мы поможем с выбором.</p><a href="#/catalog" class="btn btn-primary" data-preset="">Перейти в каталог</a></div></div>`;
+    return;
+  }
+  const items = cart.reduce((s,i)=>s+i.qty,0);
+  const old = cart.reduce((s,i)=>{const p=byId(i.id);return s+(oldPrice(p)||cost(p))*i.qty},0);
+  app.innerHTML = `
+  <div class="wrap">
+    <div class="crumbs"><a href="#/">Главная</a> / Корзина</div>
+    <h1 style="font-size:34px;margin-bottom:20px">Корзина</h1>
+    <div class="cartgrid">
+      <div class="box" style="margin:0">
+        ${cart.map(i=>{const p=byId(i.id);return `
+          <div class="ci">
+            <a class="im" href="#/product/${p.id}">${phoneSVG(p,"front")}</a>
+            <div><div class="nm"><a href="#/product/${p.id}">${esc(fullName(p))}, ${esc(p.color)}</a></div>
+              <div class="each">${fmt(cost(p))} · ${p.stock>0?"в наличии":"под заказ"}</div>
+              <div class="qty"><button data-qty="${p.id}" data-d="-1" aria-label="Меньше">−</button><span>${i.qty}</span><button data-qty="${p.id}" data-d="1" aria-label="Больше">+</button></div>
+            </div>
+            <div class="right"><b>${fmt(cost(p)*i.qty)}</b><button class="rm" data-rm="${p.id}">Удалить</button></div>
+          </div>`}).join("")}
+        <div class="sumrow"><span>Товаров: ${items}</span><span>${old>cartTotal()?`<s>${fmt(old)}</s>`:""}</span></div>
+        ${old>cartTotal()?`<div class="sumrow"><span>Скидка</span><span style="color:var(--green)">−${fmt(old-cartTotal())}</span></div>`:""}
+        <div class="sumrow"><span>Доставка</span><span>бесплатно</span></div>
+        <div class="total"><span>Итого</span><span>${fmt(cartTotal())}</span></div>
+      </div>
+      <form class="box form" id="orderForm" novalidate style="margin:0">
+        <h3>Оформление заказа</h3>
+        <label class="f">Имя<input type="text" name="name" autocomplete="name" placeholder="Иван Петров"></label>
+        <label class="f">Телефон<input type="tel" name="phone" autocomplete="tel" placeholder="+7 900 000-00-00"></label>
+        <label class="f">Email для подтверждения<input type="email" name="email" autocomplete="email" placeholder="you@example.com"></label>
+        <label class="f">Адрес доставки<input type="text" name="address" autocomplete="street-address" placeholder="Город, улица, дом, квартира"></label>
+        <label class="f">Комментарий<textarea name="comment" placeholder="Удобное время доставки, пожелания"></textarea></label>
+        <label class="agree"><input type="checkbox" name="agree"><span>Согласен с <a href="#/page/privacy">политикой конфиденциальности</a></span></label>
+        <div class="err" id="formErr"></div>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Оформить заказ</button>
+      </form>
+    </div>
+  </div>`;
+}
+function submitOrder(form){
+  const f = new FormData(form), v = n => (f.get(n)||"").toString().trim();
+  $$(".invalid",form).forEach(e=>e.classList.remove("invalid"));
+  const bad = [];
+  if(v("name").length<2) bad.push("name");
+  if(v("phone").replace(/\D/g,"").length<10) bad.push("phone");
+  if(!/^\S+@\S+\.\S+$/.test(v("email"))) bad.push("email");
+  if(v("address").length<6) bad.push("address");
+  const err = $("#formErr");
+  if(bad.length){
+    bad.forEach(n=>form.elements[n].classList.add("invalid"));
+    err.textContent = "Проверьте выделенные поля: имя, телефон, email и адрес обязательны."; err.classList.add("show");
+    form.elements[bad[0]].focus(); return;
+  }
+  if(!form.elements.agree.checked){
+    err.textContent = "Подтвердите согласие с политикой конфиденциальности."; err.classList.add("show"); return;
+  }
+  const no = "С24-" + Math.floor(100000+Math.random()*900000);
+  const d1 = new Date(Date.now()+2*864e5), d2 = new Date(Date.now()+5*864e5);
+  const ds = d => d.toLocaleDateString("ru-RU",{day:"numeric",month:"long"});
+  const order = {no, email:v("email"), name:v("name"), total:cartTotal(), eta:`${ds(d1)} – ${ds(d2)}`, count:cart.reduce((s,i)=>s+i.qty,0)};
+  store.set("s24_order", order);
+  cart = []; saveCart();
+  location.hash = "#/success";
+}
+function viewSuccess(){
+  setNav("");
+  const o = store.get("s24_order", null);
+  if(!o){ location.hash = "#/"; return; }
+  app.innerHTML = `<div class="wrap"><div class="ok-card">
+    <div class="big"></div>
+    <h1>Заказ принят</h1>
+    <p style="color:var(--muted)">Спасибо, ${esc(o.name.split(" ")[0])}! Мы свяжемся с вами для подтверждения.</p>
+    <div class="no">№ ${esc(o.no)}</div>
+    <div class="ok-list">
+      <div><span>Товаров</span><b>${o.count}</b></div>
+      <div><span>Сумма заказа</span><b>${fmt(o.total)}</b></div>
+      <div><span>Ориентировочная доставка</span><b>${esc(o.eta)}</b></div>
+      <div><span>Подтверждение</span><b>Мы пришлём письмо на ${esc(o.email)}</b></div>
+    </div>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:20px">Поддержка: <b>8 800 555-01-99</b> · support@smartfon24.example · чат на сайте</p>
+    <a href="#/catalog" class="btn btn-primary" data-preset="">Продолжить покупки</a>
+  </div></div>`;
+}
+function viewFavs(){
+  setNav("");
+  const list = favs.map(byId).filter(Boolean);
+  app.innerHTML = `<div class="wrap"><div class="crumbs"><a href="#/">Главная</a> / Избранное</div><h1 style="font-size:34px;margin-bottom:20px">Избранное</h1>
+  ${list.length?`<div class="grid">${list.map(card).join("")}</div>`:`<div class="empty"><p style="margin-bottom:16px">Вы пока ничего не добавили в избранное.</p><a class="btn btn-primary" href="#/catalog" data-preset="">В каталог</a></div>`}</div>`;
+}
+const PAGES = {
+  returns:["Политика возврата и гарантия",[
+    "Гарантия на все смартфоны — 1 год, официальная от производителя.",
+    "Вернуть товар можно в течение 14 дней после получения при сохранении упаковки и товарного вида.",
+    "Деньги возвращаются тем же способом, которым вы оплатили заказ, в течение 3–7 рабочих дней после получения товара на складе.",
+    "Если телефон оказался неисправен, мы заменим его или вернём деньги. Для этого свяжитесь с поддержкой: 8 800 555-01-99."]],
+  faq:["Частые вопросы",[
+    "Как проверить оригинальность? Серийный номер и IMEI на упаковке и в настройках телефона совпадают; проверить их можно на сайте производителя.",
+    "Есть ли рассрочка? Да, от 6 до 24 месяцев. Условия уточнит менеджер.",
+    "Сколько дней доставка? В среднем 2–5 дней по России, для товаров «Под заказ» — на 3–5 дней дольше.",
+    "Как оплатить заказ? Картой онлайн, при получении или в рассрочку."]],
+  about:["О нас",[
+    "Смартфон24 — магазин смартфонов с официальной гарантией. Мы продаём только оригинальные устройства и честно показываем характеристики.",
+    "Работаем ежедневно с 9:00 до 21:00 по московскому времени. Поддержка: 8 800 555-01-99, support@smartfon24.example.",
+    "Это демонстрационный сайт: товары, цены и контакты являются примером."]],
+  privacy:["Политика конфиденциальности",[
+    "Мы собираем только данные, необходимые для выполнения заказа: имя, телефон, email и адрес доставки.",
+    "Данные не передаются третьим лицам, кроме служб доставки и платёжных систем в объёме, необходимом для заказа.",
+    "Вы можете запросить удаление своих данных, написав на support@smartfon24.example."]]
+};
+function viewPage(k){
+  const pg = PAGES[k]; if(!pg) return view404();
+  setNav(k==="faq"?"faq":k==="returns"?"page":"");
+  app.innerHTML = `<div class="wrap"><div class="crumbs"><a href="#/">Главная</a> / ${pg[0]}</div><h1 style="font-size:34px">${pg[0]}</h1><div class="static">${pg[1].map(t=>`<p>${esc(t)}</p>`).join("")}</div></div>`;
+}
+function view404(){
+  app.innerHTML = `<div class="wrap"><div class="empty" style="margin:40px 0"><h2 style="color:var(--text)">Страница не найдена</h2><a href="#/" class="btn btn-primary" style="margin-top:14px">На главную</a></div></div>`;
+}
+
+/* ============ PICKER MODAL ============ */
+function openPicker(){
+  F = defF();
+  $("#modal").innerHTML = `<button class="x" data-close aria-label="Закрыть">×</button>
+    <h3>Подобрать по параметрам</h3><p style="color:var(--muted);margin-bottom:8px">Укажите, что важно — покажем подходящие модели.</p>
+    <form id="pickForm"><div id="pickBody">${filtersHTML("m")}</div>
+    <button class="btn btn-primary btn-block btn-lg" type="submit" style="margin-top:12px">Показать модели</button></form>`;
+  $("#ov").classList.add("show");
+  $("#pickForm input").focus();
+}
+function closeModal(){ $("#ov").classList.remove("show"); }
+
+/* ============ ROUTER ============ */
+function route(){
+  const h = location.hash.replace(/^#\/?/,"");
+  const [seg,arg] = h.split("/");
+  document.title = "Смартфон24 — смартфоны с гарантией";
+  closeModal();
+  if(seg!=="catalog") window.scrollTo(0,0);
+  switch(seg){
+    case "": viewHome(); break;
+    case "catalog": viewCatalog(); break;
+    case "product": viewProduct(arg); break;
+    case "cart": viewCart(); break;
+    case "success": viewSuccess(); break;
+    case "favorites": viewFavs(); break;
+    case "page": viewPage(arg); break;
+    default: view404();
+  }
+}
+window.addEventListener("hashchange", ()=>{ route(); window.scrollTo(0,0); });
+
+/* ============ EVENTS ============ */
+document.addEventListener("click", e=>{
+  const t = e.target;
+  let el;
+  if((el=t.closest("[data-add]"))){ addToCart(+el.dataset.add); return; }
+  if((el=t.closest("[data-fav]"))){
+    e.preventDefault();
+    const id = +el.dataset.fav; toggleFav(id);
+    $$(`[data-fav="${id}"]`).forEach(b=>{
+      b.classList.toggle("on", favs.includes(id));
+      if(b.id==="favBtn") b.textContent = favs.includes(id)?"♥ В избранном":"♡ В избранное";
+    });
+    if(location.hash==="#/favorites") viewFavs();
+    return;
+  }
+  if((el=t.closest("[data-preset]"))){
+    e.preventDefault();
+    const k = el.dataset.preset; applyPreset(k);
+    if(location.hash==="#/catalog") route(); else location.hash="#/catalog";
+    return;
+  }
+  if((el=t.closest("[data-go]"))){
+    if(el.dataset.go==="hits"){ $("#hits")?.scrollIntoView({behavior:"smooth",block:"start"}); setTimeout(()=>{},0); }
+    return;
+  }
+  if((el=t.closest("[data-open='picker']"))){ openPicker(); return; }
+  if(t.closest("[data-close]") || t===$("#ov")){ closeModal(); return; }
+  if(t.closest("[data-more]")){ F.shown += PER_PAGE; renderResults(); return; }
+  if(t.closest("[data-reset]")){ F = defF(); viewCatalog(); return; }
+  if(t.closest("[data-toggle-filters]")){ $("#filters").classList.toggle("open"); return; }
+  if((el=t.closest("[data-slide]"))){
+    const g = $("#gal"); g.scrollTo({left:g.clientWidth*(+el.dataset.slide),behavior:"smooth"}); return;
+  }
+  if((el=t.closest("[data-qty]"))){
+    const it = cart.find(i=>i.id===+el.dataset.qty); it.qty += +el.dataset.d;
+    if(it.qty<1) it.qty = 1;
+    if(it.qty>20) it.qty = 20;
+    saveCart(); viewCart(); return;
+  }
+  if((el=t.closest("[data-rm]"))){
+    cart = cart.filter(i=>i.id!==+el.dataset.rm); saveCart(); viewCart(); return;
+  }
+});
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeModal(); });
+
+document.addEventListener("input", e=>{
+  const f = e.target.closest("[data-f]"); if(!f) return;
+  if(f.dataset.f==="priceMax"){ const pv = f.closest(".fg").querySelector("[data-pv]"); if(pv) pv.textContent = fmt(+f.value); }
+  const body = f.closest("#filtersBody");
+  if(body){ readFilters(body); renderResults(); }
+});
+document.addEventListener("change", e=>{
+  if(e.target.id==="sort"){ F.sort = e.target.value; renderResults(); return; }
+  const f = e.target.closest("[data-f]");
+  const body = f && f.closest("#filtersBody");
+  if(body){ readFilters(body); renderResults(); }
+});
+document.addEventListener("submit", e=>{
+  const fm = e.target;
+  if(fm.id==="homeSearch"){
+    e.preventDefault(); F = defF(); F.q = fm.q.value.trim(); location.hash = "#/catalog"; if(location.hash==="#/catalog") route();
+  } else if(fm.id==="pickForm"){
+    e.preventDefault(); readFilters($("#pickBody")); closeModal();
+    if(location.hash==="#/catalog") route(); else location.hash = "#/catalog";
+  } else if(fm.id==="orderForm"){
+    e.preventDefault(); submitOrder(fm);
+  }
+});
+
+updBadges();
+route();
+</script>
+</body>
+</html>
